@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #27272c;
+}
+
+button {
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+}
+
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+body,
+html {
+  font-family: "Fjalla One", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(169, 3, 41);
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(169, 3, 41, 1) 0%,
+    rgba(143, 2, 34, 1) 44%,
+    rgba(109, 0, 25, 1) 100%
+  );
+}
+
+.rainbow-text {
+  position: top;
+  top: 50%;
+  display: block;
+  left: 50%;
+  margin-left: -99px;
+  margin-top: -50px;
+}
+
+.title-text {
+  text-align: center;
+}
+
+.title-text span.letters {
+  font-size: 6rem;
+}
+
+.letters {
+  color: #fff;
+  text-shadow: 2px 2px 6px #333;
+  animation: color-changer 8s infinite;
+  transition: color-changer ease-in-out;
+  @for $i from 1 through 7 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+}
+
+@keyframes color-changer {
+  33% {
+    color: #ee0bf5;
+  }
+  /* #EE0BF5 cctv*/
+  66% {
+    color: #00ccff;
+  }
+  /* #00CCFF marine */
+  100% {
+    color: #fff;
+  }
+  /* #66F50B radio */
+}
+
+@-webkit-keyframes color-changer {
+  33% {
+    color: #ee0bf5;
+  }
+  /* #EE0BF5 cctv*/
+  66% {
+    color: #00ccff;
+  }
+  /* #00CCFF marine */
+  100% {
+    color: #fff;
+  }
+  /* #66F50B radio */
+}
+
+.made-by-me {
+  position: fixed;
+  text-decoration: none;
+  box-sizing: border-box;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 100%;
+  border: 2px solid white;
+  box-shadow: 0 0 30px 0 rgba(black, 0.3);
+  font-size: 0px;
+  background: url("https://assets.codepen.io/50099/internal/avatars/users/default.png")
+    no-repeat center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
